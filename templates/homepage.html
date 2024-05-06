@@ -6,20 +6,19 @@
     <title>Presenteísmo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
     <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
-
 </head>
 <body onload="preencherFiltro()">
-    <div class="idea">
-        <div class="idea-cima">
-            <h1>ID/EA</h1>
-            <img src="https://cdn-icons-png.flaticon.com/512/3625/3625060.png" alt="idea">
 
-        </div>
-        <h2>Intelligence Data & Execution Analysis</h2>
-    </div>
     <div class="titulo">
         <div class="faixa">Presenteísmo</div>
         <div class="botao" onclick="menu_lateral()">Menu</div>
+        <div class="idea">
+            <div class="idea-cima">
+                <h1>ID/EA</h1>
+                <img src="https://cdn-icons-png.flaticon.com/512/3625/3625060.png" alt="idea">
+            </div>
+            <h2>Intelligence Data & Execution Analysis</h2>
+        </div>
     </div>
 
     <div class="menu-lateral" id="menu">
@@ -33,9 +32,12 @@
     </div>
 
     <div class="conteudo">
-        <select id="filtro" onchange="filtrarTabela()">
-            <option value="">Todos</option>
-        </select>
+        <div class="filtro_tabela">
+            <h1 class="titulo_filtro">Filtro por team leader</h1>
+            <select id="filtro" onchange="filtrarTabela()">
+                <option value="">Todos</option>
+            </select>
+        </div>
         <table class="tabela">
             <thead>
                 <tr>
@@ -86,7 +88,7 @@
             </tbody>
         </table>
     </div>
-    <div class="botao-lancar" onclick="abrirMensagem()" id="salvar">Lançar</div>
+    <div class="botao-lancar" onclick="abrirMensagem()" id="salvar">Lançar Dados</div>
 
     <div id="mensagem_confirm" class="mensagem_confirmacao">
         <div class="mensagem_conteudo">

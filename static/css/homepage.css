@@ -7,10 +7,13 @@
         }
 
         .titulo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            margin-top: 20px;
         }
 
+        /* estilo da faixa */
         .faixa {
             background-color: #050834;
             color: white;
@@ -18,23 +21,21 @@
             display: inline-block;
             border-radius: 7px;
             font-size: 30px;
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
         }
 
         .botao {
-            display: inline-block;
             padding: 10px 20px;
-            background-color: #3a63a8;
+            background-color: red;
             color: #fff;
             cursor: pointer;
             border-radius: 5px;
-            margin-left: 10px;
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 3%;
+            left: 15px;
+            transform: translateY(-50%);
         }
 
         .botao:hover {
@@ -77,7 +78,48 @@
             cursor: pointer;
         }
 
-        .conteudo {
+        /* Estilo da logo IDEA */
+        .idea {
+            position: absolute;
+            top: 3%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .idea-cima {
+            display: flex;
+            align-items: center;
+        }
+
+        .idea-cima h1 {
+            font-size: 12px;
+            color: #333;
+            margin-right: 5px;
+        }
+
+        .idea img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .idea h2 {
+            font-size: 10px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+
+
+         .conteudo {
             padding-top: 10px;
             padding-left: 10px;
         }
@@ -101,6 +143,7 @@
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
+            text-align: center;
         }
 
         th {
@@ -122,19 +165,34 @@
             align-itens: center;
         }
 
-        #filtro {
+        .filtro_tabela {
             position: absolute;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-            font-size: 16px;
-            width: 200px;
-            outline: none;
-            margin-bottom: 10px;
-            margin-top: 8%;
-            margin-left: 1%;
+            margin-left: 0.5%;
+            background-color: #050834;
+            padding: 10px;
+            border-radius: 10px;
+            width: 15%;
+            margin-top: 6%;
         }
+
+        .titulo_filtro {
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        #filtro {
+            width: 100%;
+            padding: 6px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: white;
+            color: black;
+        }
+
 
         .botao-lancar {
         position: fixed;
@@ -240,54 +298,5 @@
             background-color: #07790d;
         }
 
-        /* Estilo da logo IDEA */
-        .idea {
-            position: absolute;
-            top: 1px;
-            right: 10px;
-            background-color: white;
-            padding: 5px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 0;
-            align-itens: center;
-        }
 
-        .idea-cima {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
 
-        .idea-cima h1 {
-            font-size: 18px;
-            color: #333;
-            margin-right: 5px;
-            margin-left: 30%;
-        }
-
-        .idea h2 {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-            text-align: center;
-        }
-
-        .idea img {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* cores tabela */
-
-        .option-red {
-          color: red;
-        }
-
-        .option-blue {
-          color: blue;
-        }
-
-        .option-green {
-          color: green;
-        }

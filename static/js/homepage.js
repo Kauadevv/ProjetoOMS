@@ -119,32 +119,32 @@
 
         // Função para adicionar cor no Presentísmo
         function alterarPresente(seletor) {
-  var selectedOption = seletor.options[seletor.selectedIndex];
-  var selectedText = selectedOption.textContent;
-  var corDeFundo = '';
+          var selectedOption = seletor.options[seletor.selectedIndex];
+          var selectedText = selectedOption.textContent;
+          var corDeFundo = '';
 
-  // Verifica o texto selecionado e define a cor de fundo apropriada
-  switch (selectedText) {
-    case 'Presente':
-      corDeFundo = 'green';
-      break;
-    case 'Falta Injustificada':
-      corDeFundo = 'lightcoral';
-      break;
-    case 'Banco de Horas':
-      corDeFundo = 'lightblue';
-      break;
-    case 'Licença':
-      corDeFundo = 'lightyellow';
-      break;
-    default:
-      corDeFundo = ''; // Reverte para a cor padrão
-      break;
-  }
+          // Verifica o texto selecionado e define a cor de fundo
+          switch (selectedText) {
+            case 'Presente':
+              corDeFundo = 'green';
+              break;
+            case 'Falta Injustificada':
+              corDeFundo = 'red';
+              break;
+            case 'Banco de Horas':
+              corDeFundo = 'lightgreen';
+              break;
+            case 'Licença':
+              corDeFundo = 'yellow';
+              break;
+            default:
+              corDeFundo = ''; // cor padrão
+              break;
+          }
 
-  // Encontra o elemento pai da célula de seleção (a <td>)
-  var td = seletor.parentElement;
+          // Encontra o elemento pai da célula de seleção (a <td>)
+          var td = seletor.parentElement;
 
-  // Aplica a cor de fundo à célula
-  td.style.backgroundColor = corDeFundo;
-}
+          // Aplica a cor de fundo à célula
+          td.style.backgroundColor = corDeFundo;
+        }
