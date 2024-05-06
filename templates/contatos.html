@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <title>Contatos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contatos.css') }}">
+    <script src="{{ url_for('static', filename='js/contatos.js') }}"></script>
+
 </head>
 <body>
+    <div class="botao" onclick="menu_lateral()">Menu</div>
+     <div class="menu-lateral" id="menu">
+        <span class="fechar-menu" onclick="fecharMenu()">X</span>
+        <ul>
+            <li onclick="homepage()">Página Inicial</li>
+            <li onclick="logout()">Sair</li>
+        </ul>
+    </div>
+
+
     <p>nossos contatos são são:</p>
     <p>Email:kauah5670@gmail.com</p>
     <p>Telefone : 12 99999999</p>
+
+
 </body>
+
 </html>

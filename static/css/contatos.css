@@ -1,0 +1,65 @@
+        body {
+            background-color: #012538;
+        }
+        p {
+            color: #fcefef;
+            text-align: center;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3a63a8;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .botao:hover {
+            background-color: #fb9833;
+        }
+
+        .menu-lateral {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #050834;
+            padding-top: 50px;
+            transition: left 0.3s ease;
+        }
+
+        .menu-lateral ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-lateral ul li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .menu-lateral ul li:hover {
+            background-color: #fb9833;
+        }
+
+        .conteudo {
+            padding-left: 270px;
+        }
+
+        .fechar-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+        }
+

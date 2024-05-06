@@ -1,10 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presenteísmo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+
 </head>
-<body>
-    <p>Meu primeiro Site kauã lindo</p>
+<body onload="preencherFiltro()">
+    <div class="idea">
+        <div class="idea-cima">
+            <h1>ID/EA</h1>
+            <img src="https://cdn-icons-png.flaticon.com/512/3625/3625060.png" alt="idea">
+
+        </div>
+        <h2>Intelligence Data & Execution Analysis</h2>
+    </div>
+    <div class="titulo">
+        <div class="faixa">Presenteísmo</div>
+        <div class="botao" onclick="menu_lateral()">Menu</div>
+    </div>
+
+    <div class="menu-lateral" id="menu">
+        <span class="fechar-menu" onclick="fecharMenu()">X</span>
+        <ul>
+            <li onclick="redirecionar('/picking')">Picking</li>
+            <li onclick="redirecionar('/packing')">Packing</li>
+            <li onclick="redirecionar('/contatos')">Contatos</li>
+            <li onclick="redirecionar('/logout')">Sair</li>
+        </ul>
+    </div>
+
+    <div class="conteudo">
+        <select id="filtro" onchange="filtrarTabela()">
+            <option value="">Todos</option>
+        </select>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>ID_Groot</th>
+                    <th>Nome</th>
+                    <th>Team Leader</th>
+                    <th>Processo Mãe</th>
+                    <th>Presenteísmo</th>
+                    <th>Processo Atual</th>
+                    <th>% Processo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for base_hc in usuarios %}
+                <tr>
+                    <td>{{ base_hc[0] }}</td>
+                    <td>{{ base_hc[1] }}</td>
+                    <td>{{ base_hc[3] }}</td>
+                    <td>{{ base_hc[4] }}</td>
+                    <td>
+                        <select class="seletor-presenca" id="filtro_suspenso" onchange="alterarPresente(this)">
+                            <option value="presente">Presente</option>
+                            <option value="falta">Falta Injustificada</option>
+                            <option value="Banco de Horas">Banco de Horas</option>
+                            <option value="Licença">Licença</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="area-atual" onchange="alterarPresente(this)">
+                            <option value="Picking">Picking</option>
+                            <option value="Packing_Mono">Packing_Mono</option>
+                            <option value="Packing_ptw">Packing_ptw</option>
+                            <option value="wall_in">Wall_in</option>
+                            <option value="Doca">Doca</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="percentagem" onchange="alterarPresente(this)">
+                            <option value="100%">100%</option>
+                            <option value="95%">95%</option>
+                            <option value="85%">85%</option>
+                            <option value="72%">72%</option>
+                            <option value="42%">42%</option>
+                        </select>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="botao-lancar" onclick="abrirMensagem()" id="salvar">Lançar</div>
+
+    <div id="mensagem_confirm" class="mensagem_confirmacao">
+        <div class="mensagem_conteudo">
+            <span class="fechar_mensagem" onclick="fecharMensagem()">&times;</span>
+            <h2>Confirmar lançamento de dados</h2>
+            <p>Você realmente deseja enviar os dados?</p>
+            <div class="buttons">
+                <button class="botaoSim" onclick="realizarAcao()">Sim</button>
+                <button class="botaoNao" onclick="fecharMensagem()">Não</button>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>

@@ -5,151 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #012538;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-container {
-            background-color: #3a63a8;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            z-index: 1; /* Garante que o formulário esteja à frente da div .idea */
-        }
-
-        h1 {
-            text-align: center;
-            color: white;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
-        label {
-            font-weight: bold;
-            color: white;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: calc(100% - 32px);
-            padding: 10px;
-            margin: 5px 0 20px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            font-size: 16px;
-            float: left;
-        }
-
-        .olho {
-            float: right;
-            margin-top: 15px;
-            margin-right: 8px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            outline: none;
-            position: relative;
-        }
-
-        .olho i {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 8px;
-            color: white;
-        }
-
-        input[type="submit"] {
-            background-color: #00042c;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #fb9833;
-        }
-
-        .criar_conta {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-            color: white;
-        }
-
-        .criar_conta a {
-            color: #fb9833;
-            text-decoration: none;
-        }
-
-        .criar_conta a:hover {
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .error-message {
-            color: #ff0000;
-            margin-top: 10px;
-            font-size: 19px;
-        }
-
-        .idea {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background-color: white;
-            padding: 5px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 0;
-            align-itens: center;
-        }
-
-        .idea-cima {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-
-        .idea-cima h1 {
-            font-size: 18px;
-            color: #333;
-            margin-right: 5px;
-            margin-left: 30%;
-        }
-
-        .idea h2 {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-            text-align: center;
-        }
-
-        .idea img {
-            width: 20px;
-            height: 20px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
 
@@ -157,6 +13,7 @@
         <div class="idea-cima">
             <h1>ID/EA</h1>
             <img src="https://cdn-icons-png.flaticon.com/512/3625/3625060.png" alt="idea">
+
         </div>
         <h2>Intelligence Data & Execution Analysis</h2>
     </div>
@@ -176,7 +33,7 @@
             <div style="position: relative;">
                 <input type="password" id="password" name="password">
                 <button type="button" class="olho" onclick="letras_visiveis()">
-                    <i id="olho-icone" class="far fa-eye"></i>
+                    <i id="olho-icone" class="fas fa-eye"></i>
                 </button>
             </div>
             <br><br>
@@ -187,22 +44,7 @@
         <p class="criar_conta">Não tem uma conta? <a href="{{ url_for('criar_usuario') }}">Crie uma aqui</a>.</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script>
-        function letras_visiveis() {
-            var senha = document.getElementById("password");
-            var icone_olho = document.getElementById("olho-icone");
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 
-            if (senha.type === "password") {
-                senha.type = "text";
-                icone_olho.classList.remove("fa-eye");
-                icone_olho.classList.add("fa-eye-slash");
-            } else {
-                senha.type = "password";
-                icone_olho.classList.remove("fa-eye-slash");
-                icone_olho.classList.add("fa-eye");
-            }
-        }
-    </script>
 </body>
 </html>

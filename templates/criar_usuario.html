@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Novo Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/criar_usuario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/criar_usuario.js') }}">
+
 </head>
 <body>
-$END$
+    <div class="login-container">
+        <h1>Criar Novo Usuário</h1>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="{{ url_for('criar_usuario') }}">
+            <label for="username">Nome de usuário:</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Senha (mínimo 8 caracteres):</label><br>
+            <input type="password" id="password" name="password" pattern=".{8,}" title="A senha deve ter no mínimo 8 caracteres" required><br>
+
+            <label for="confirm_password">Confirmar Senha:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+            <input type="submit" value="Criar Usuário">
+        </form>
+        <p>Já possui uma conta? <a href="{{ url_for('login') }}">Faça login aqui</a>.</p>
+    </div>
+
 </body>
 </html>

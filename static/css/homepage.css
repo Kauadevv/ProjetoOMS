@@ -1,0 +1,293 @@
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #012538;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .faixa {
+            background-color: #050834;
+            color: white;
+            padding: 20px 30px;
+            display: inline-block;
+            border-radius: 7px;
+            font-size: 30px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3a63a8;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .botao:hover {
+            background-color: #fb9833
+        }
+
+        .menu-lateral {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #050834;
+            padding-top: 50px;
+            transition: left 0.3s ease;
+            z-index: 2;
+        }
+
+        .menu-lateral ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-lateral ul li {
+            padding: 10px;
+            border-bottom: 1px solid #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        .menu-lateral ul li:hover {
+            background-color: #fb9833;
+        }
+
+        .fechar-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .conteudo {
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+
+        /* Estilos da tabela de hc */
+        table {
+            width: 99%;
+            border-collapse: collapse;
+            margin: 50px auto 0;
+            margin-top: 12%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: all 1s;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #050834;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #d4d4d4;
+        }
+
+        .seletor-presenca, .area-atual, .percentagem {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            background-color: transparent;
+            border-color: transparent;
+            align-itens: center;
+        }
+
+        #filtro {
+            position: absolute;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            font-size: 16px;
+            width: 200px;
+            outline: none;
+            margin-bottom: 10px;
+            margin-top: 8%;
+            margin-left: 1%;
+        }
+
+        .botao-lancar {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+        .botao-lancar:hover {
+        background-color: #fb9833;
+    }
+
+     /* Estilo da mensagem de confirmação */
+        .mensagem_confirmacao {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .mensagem_conteudo {
+            background-color: #007bff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            max-width: 500px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .mensagem_conteudo h2 {
+            color: white;
+            font-size: 28px;
+        }
+
+        .mensagem_conteudo {
+            text-align: center;
+        }
+
+        .mensagem_conteudo p {
+            color: white;
+            font-size: 20px;
+        }
+
+        .fechar_mensagem {
+            color: blue;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .fechar_mensagem:hover {
+            color: black;
+        }
+
+        /* Estilo dos botões de confirmação */
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        .botaoSim {
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #08940f;
+            font-size: 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .botaoNao {
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #ff0000;
+            font-size: 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .botaoNao:hover {
+            background-color: #970303;
+        }
+
+        .botaoSim:hover {
+            background-color: #07790d;
+        }
+
+        /* Estilo da logo IDEA */
+        .idea {
+            position: absolute;
+            top: 1px;
+            right: 10px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            align-itens: center;
+        }
+
+        .idea-cima {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .idea-cima h1 {
+            font-size: 18px;
+            color: #333;
+            margin-right: 5px;
+            margin-left: 30%;
+        }
+
+        .idea h2 {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .idea img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* cores tabela */
+
+        .option-red {
+          color: red;
+        }
+
+        .option-blue {
+          color: blue;
+        }
+
+        .option-green {
+          color: green;
+        }
