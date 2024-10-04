@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = "Chave aleatória 121213"
+app.secret_key = "777 1dph"
 
 # Função para conectar ao banco de dados
 def conectar_bd():
