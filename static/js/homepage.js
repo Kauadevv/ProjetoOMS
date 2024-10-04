@@ -138,13 +138,12 @@
               corDeFundo = 'yellow';
               break;
             default:
-              corDeFundo = ''; // cor padrão
+              corDeFundo = ''; 
               break;
           }
 
-          // Encontra o elemento pai da célula de seleção (a <td>)
+          
           var td = seletor.parentElement;
 
-          // Aplica a cor de fundo à célula
           td.style.backgroundColor = corDeFundo;
         }
