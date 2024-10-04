@@ -8,11 +8,11 @@ app.secret_key = "Chave aleatória 121213"
 def conectar_bd():
     return sqlite3.connect('usuarios.db')
 
-# Verificar se o usuário está logado
+# Verificar se o usuário está logado se não, ele vai para a tela de login
 def usuario_logado():
     return 'username' in session
 
-# Rota para a página inicial
+# Rota para a página inicial do site
 @app.route('/')
 def homepage():
     if usuario_logado():
