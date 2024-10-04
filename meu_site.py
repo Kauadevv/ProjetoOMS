@@ -116,7 +116,7 @@ def salvar_dados_tabela():
         return jsonify({'error': str(e)}), 500
 
 
-# Função para verificar se um usuário já existe no banco de dados
+# Função para verificar se um usuário já existe no banco de dados 
 def verificar_usuario_existente(username):
     database = conectar_bd()
     cursor = database.cursor()
